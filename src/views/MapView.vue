@@ -49,8 +49,6 @@ export default {
   },
   methods: {
     onMapClick(e) {
-      console.log(e.latlng);
-
       this.coordinatesSelected = e.latlng;
       this.showModal = true;
     },
@@ -63,7 +61,6 @@ export default {
         title: this.inputMarkerTitle,
         coordinates: this.coordinatesSelected,
       });
-      console.log("markersSaved", JSON.stringify(this.markersSaved));
       localStorage.setItem("savedMarkers", JSON.stringify(this.markersSaved));
       this.coordinatesSelected = undefined;
       this.inputMarkerTitle = "";
@@ -73,7 +70,6 @@ export default {
   mounted() {
     this.mapMy = map("mapMy").setView([48.505, 32.09], 6);
     const localSavedMarkers = localStorage.getItem("savedMarkers");
-    console.log(localSavedMarkers);
     if (localSavedMarkers) {
       this.markersSaved = JSON.parse(localSavedMarkers);
       this.markersSaved.forEach((markerFromSaved) => {
