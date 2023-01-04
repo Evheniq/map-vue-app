@@ -17,7 +17,7 @@ npm run dev
 ![alt text](./readmeImages/map.png)
 
 **Solved:**
-- [x] create SPA
+- [x] responsive SPA
 - [x] posts page
 - [x] map page
 - [x] page navigation
